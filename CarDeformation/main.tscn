@@ -1,16 +1,16 @@
-[gd_scene load_steps=106 format=4 uid="uid://yexejxsnlqvn"]
+[gd_scene load_steps=109 format=4 uid="uid://yexejxsnlqvn"]
 
-[ext_resource type="Script" path="res://cars/BaseCar.gd" id="1_6tmgj"]
+[ext_resource type="Script" uid="uid://dh7nypfvwcil7" path="res://cars/BaseCar.gd" id="1_6tmgj"]
 [ext_resource type="PackedScene" uid="uid://benmjny2guowm" path="res://cars/Models/Doge/Wheel.glb" id="2_hwo3e"]
 [ext_resource type="PackedScene" uid="uid://8sl5gmdd6o6w" path="res://cars/camera/camera_3d.tscn" id="3_b3hbe"]
 [ext_resource type="Material" uid="uid://cy4ku1rfnn1xh" path="res://Scenes/mat.tres" id="5_qji00"]
-[ext_resource type="Script" path="res://Scripts/body_deform.gd" id="6_a7w2q"]
+[ext_resource type="Script" uid="uid://4ln8mdcdj60p" path="res://Scripts/body_deform.gd" id="6_a7w2q"]
 [ext_resource type="PackedScene" uid="uid://bfvnfriyibjfl" path="res://Scenes/SpinningDisc.tscn" id="6_h0i2b"]
 [ext_resource type="Texture2D" uid="uid://b7i7veysoctq2" path="res://cars/Models/Doge/doge-body_UCB_BOTTOM_DIF.png" id="6_yxvcm"]
 [ext_resource type="PackedScene" uid="uid://bfyl7pbvll6tm" path="res://Scenes/bobbing_platform.tscn" id="7_6bw4t"]
 [ext_resource type="Texture2D" uid="uid://clhr4ltf1pott" path="res://cars/Models/Doge/doge-body_UCB_BOTTOM_nrm.png" id="7_8f4dj"]
 [ext_resource type="Texture2D" uid="uid://c8ola23rjsnvm" path="res://cars/Models/Doge/doge-body_UCB_GLASS_CLEAN_dif.png" id="8_0j2p3"]
-[ext_resource type="Script" path="res://Scripts/CarReset.gd" id="8_ayi6b"]
+[ext_resource type="Script" uid="uid://da406jxwrkqd7" path="res://Scripts/CarReset.gd" id="8_ayi6b"]
 [ext_resource type="Texture2D" uid="uid://ctluyesgj2u1x" path="res://cars/Models/Doge/doge-body_Riverside88_lights_dif.png" id="9_etaif"]
 [ext_resource type="Texture2D" uid="uid://0fn3naoojpuo" path="res://cars/Models/Doge/doge-body_GENERIC_BADGES_DIF.png" id="10_prdpr"]
 [ext_resource type="Texture2D" uid="uid://bgd27im5ixl4i" path="res://cars/Models/Doge/doge-body_Numberplates_dif.png" id="11_s6wwj"]
@@ -30,15 +30,10 @@ sky_material = SubResource("ProceduralSkyMaterial_b7tlo")
 [sub_resource type="Environment" id="Environment_8dxyn"]
 background_mode = 2
 sky = SubResource("Sky_ye2ye")
-tonemap_mode = 2
-ssr_enabled = true
-ssao_enabled = true
 ssao_radius = 1.5
 ssao_intensity = 0.6
 ssao_power = 32.7849
-ssil_enabled = true
 sdfgi_y_scale = 2
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7xwy"]
 resource_name = "body"
@@ -1263,6 +1258,9 @@ size = Vector3(0.542114, 1.7092, 3.63986)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7kmqy"]
 radius = 0.363529
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vivmo"]
+size = Vector3(1.995, 1.05524, 4.89844)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_5jeqt"]
 radial_segments = 20
 rings = 1
@@ -1283,6 +1281,11 @@ plane = Plane(0, 0, -1, 0)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ahskd"]
 plane = Plane(0, 0, 1, 0)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2cqfq"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vivmo"]
 
 [node name="Main" type="Node3D"]
 
@@ -1321,12 +1324,12 @@ environment = SubResource("Environment_8dxyn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.80696, 0.183487, -0.56138, 0, 0.950516, 0.310676, 0.590606, -0.250704, 0.767029, 0, 43.5687, 0)
-shadow_enabled = true
 directional_shadow_max_distance = 200.0
 
 [node name="car" type="VehicleBody3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(-0.961194, 0, 0.275872, 0, 1, 0, -0.275872, 0, -0.961194, 5.91635, 0.184314, 4.54346)
+collision_mask = 3
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.1, 0)
 script = ExtResource("1_6tmgj")
@@ -1624,6 +1627,12 @@ shape = SubResource("BoxShape3D_xaafv")
 transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 0.00131905, 0.653567, -2.08615)
 shape = SubResource("CapsuleShape3D_7kmqy")
 
+[node name="Area3D" type="Area3D" parent="car"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="car/Area3D"]
+transform = Transform3D(1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, 1, 0.0131226, 0.841463, -0.0634754)
+shape = SubResource("BoxShape3D_vivmo")
+
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0149269, 0.111844, 0.0358543)
 material_override = ExtResource("5_qji00")
@@ -1631,9 +1640,10 @@ use_collision = true
 
 [node name="box" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.925521, -0.968715, 0, 0.378697, 2.3675, 0, 0, 0, 1, 18.2289, -0.192802, 0)
+visible = false
 size = Vector3(7.59973, 0.135742, 10.8715)
 
-[node name="box2" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="Wall" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, -4.09722, 1.05125, 0)
 size = Vector3(1, 1, 10.8715)
 
@@ -1689,77 +1699,78 @@ transform = Transform3D(-0.00242604, 0, -0.999997, 0, 2.55802, 0, 0.999997, 0, -
 size = Vector3(0.3, 0.14044, 10.8715)
 
 [node name="bumps_elevated" type="CSGCombiner3D" parent="CSGCombiner3D"]
+visible = false
 
 [node name="box3" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(0.925521, -0.968715, 0, 0.378697, 2.3675, 0, 0, 0, 1, 21.2118, 0.404301, 13.1821)
+transform = Transform3D(0.925521, -0.968715, 0, 0.378697, 2.3675, 0, 0, 0, 1, 21.2118, 0.404301, 39.9479)
 size = Vector3(7.59973, 0.135742, 10.8715)
 
 [node name="box4" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 27.93, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 27.93, 1.82003, 39.9479)
 size = Vector3(6.49017, 0.135742, 10.8715)
 
 [node name="box5" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 31.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 31.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box6" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 32.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 32.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box7" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 33.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 33.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box8" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 34.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 34.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box9" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 35.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 35.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box10" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 36.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 36.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box11" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 37.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 37.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box12" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 38.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 38.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box13" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 39.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 39.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box14" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 40.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 40.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box15" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 41.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 41.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box16" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 42.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 42.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box17" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 43.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 43.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box18" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 44.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 44.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box19" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 45.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 45.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="box20" type="CSGBox3D" parent="CSGCombiner3D/bumps_elevated"]
-transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 46.9904, 1.82003, 13.1821)
+transform = Transform3D(1, 0, 0, 0, 2.55802, 0, 0, 0, 1, 46.9904, 1.82003, 39.9479)
 size = Vector3(0.408172, 0.135742, 10.8715)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -1788,7 +1799,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1000)
 shape = SubResource("WorldBoundaryShape3D_ahskd")
 
 [node name="Disc" parent="." instance=ExtResource("6_h0i2b")]
-transform = Transform3D(0.935891, 0, -0.337055, 0, 1, 0, 0.337055, 0, 0.935891, 14.9441, -0.0354118, -20.2879)
+transform = Transform3D(0.813616, 0, -0.569752, 0, 1, 0, 0.569752, 0, 0.813616, 14.9441, -0.0354118, -20.2879)
 
 [node name="BobbingPlatform" parent="." instance=ExtResource("7_6bw4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.456, 0.429488, -21.611)
@@ -1820,3 +1831,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.456, 0.545267, -37.611)
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.866025, -0.082016, 0.493228, 0, 0.986455, 0.164032, -0.5, 0.142056, -0.854295, 8, 3.10513, 0)
 current = true
+
+[node name="Wall" type="StaticBody3D" parent="." groups=["Obstacle"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.999639, 4)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+shape = SubResource("ConcavePolygonShape3D_2cqfq")
+
+[node name="BodyDeform" type="MeshInstance3D" parent="Wall"]
+mesh = SubResource("BoxMesh_vivmo")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="car/Area3D" to="car" method="_on_area_3d_body_entered"]
