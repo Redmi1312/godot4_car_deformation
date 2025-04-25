@@ -1,4 +1,4 @@
-# 0.0.2
+# 0.0.3
 extends VehicleBody3D
 class_name BaseCar
 
@@ -186,4 +186,36 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		print(impact_point_local, impact_force)
 		
 		if has_node("doge-body/Body"):
-			$"doge-body/Body".apply_deformation(impact_point_local, 0.7, 25)
+			var center_local = Vector3.ZERO
+			var impact_dir = (center_local - impact_point_local).normalized()
+			$"doge-body/Body".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Grill".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Hood".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Door_FL".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Trunkdoor".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Doorglass_FL".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Windshield".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Hood_inner".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Taillights".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Suspension_front".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Bottom".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Taillights_glass_reverse".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Headlights_glass".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Turnsignals_glass".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Badges_body".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Badges_hood".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Exhaust".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Numberplate_rear".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Dashboard".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Seats".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Doorcard_FL".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Door_inner_FL".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Trunkdoor_inner".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Engine_Plarts_muscle".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Taillights_glass_brakelights".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Glass_rear".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Door_FR".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Door_inner_FR".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Doorcard_FR".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Doorglass_FR".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
+			$"doge-body/Stear".apply_deformation(impact_point_local, 0.7, 25, impact_dir)
