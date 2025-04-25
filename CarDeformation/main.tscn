@@ -1799,7 +1799,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1000)
 shape = SubResource("WorldBoundaryShape3D_ahskd")
 
 [node name="Disc" parent="." instance=ExtResource("6_h0i2b")]
-transform = Transform3D(0.813616, 0, -0.569752, 0, 1, 0, 0.569752, 0, 0.813616, 14.9441, -0.0354118, -20.2879)
+transform = Transform3D(-0.817658, 0, 0.563105, 0, 1, 0, -0.563105, 0, -0.817658, 14.9441, -0.0354118, -20.2879)
 
 [node name="BobbingPlatform" parent="." instance=ExtResource("7_6bw4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.456, 0.429488, -21.611)

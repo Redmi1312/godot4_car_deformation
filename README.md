@@ -1,15 +1,11 @@
 A simple deformation of a car, I took the project from Godot assets, to see the deformation just run the project, press V, and that’s it)
 
-Версія 0.2
-Тепер можна не тільки на V деформувати авто, а й авто деформується від ударів о стіни)
-ДО УДАРУ:
+Версія 0.3
+Тепер машина деформується у потрібному напрямку) Досить гарно) Залишилось прибрати безлад у коді, додати пару фіч і можна закінчити.
 
-![до](https://github.com/user-attachments/assets/e9432663-75f0-415a-9596-3618e1a1466b)
 
-УДАР СПЕРЕДУ:
+![4](https://github.com/user-attachments/assets/1e0bc6f6-31c8-4563-8ca3-0f663ebfda4e)
+![5](https://github.com/user-attachments/assets/106212b3-417e-4a58-9387-7eb5b334c297)
 
-![1](https://github.com/user-attachments/assets/5508dc3d-304f-4b40-912e-3f97dd9f70f0)
-
-УДАР СЗАДУ:
-
-![2](https://github.com/user-attachments/assets/aa992298-ae78-4606-9fc4-3c5a3321ac00)
+Я чесно не знаю чому не деформуються бамбер та радіатор авто, скоріш за все така крива модель.
+Сила деформацій на фото була спеціально підвищена для показу. Можна змінити радіус, напрямок сили, кількисть сили.

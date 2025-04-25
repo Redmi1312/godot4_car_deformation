@@ -7,7 +7,7 @@ func _ready():
 	if mesh and mesh.get_surface_count() > 0:  # Проверяем, есть ли поверхности
 		mesh_data_tool.create_from_surface(mesh, 0)
 
-func apply_deformation(position: Vector3, force: float, radius: float):
+func apply_deformation(position: Vector3, force: float, radius: float, impact_dir: Vector3):
 	if mesh_data_tool.get_vertex_count() == 0:
 		return
 	
@@ -16,8 +16,8 @@ func apply_deformation(position: Vector3, force: float, radius: float):
 		var distance = vertex_pos.distance_to(position)
 		
 		if distance < radius:
-			var deformation = (1.0 - (distance / radius)) * force
-			vertex_pos += Vector3(0, -deformation, 0)  # Деформация вниз
+			var deformation = (1.0 - (distance / radius)) * force * 10
+			vertex_pos += impact_dir.normalized() * deformation  # <- деформируем вдоль направления удара #vertex_pos += Vector3(0, -deformation, 0)  # Деформация вниз
 			mesh_data_tool.set_vertex(i, vertex_pos)
 	
 	deform_timer = 0.1  # Обновлять меш раз в 0.1 сек
